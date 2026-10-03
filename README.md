@@ -1,226 +1,162 @@
-\# Uber NYC Data Analysis
+# 🚕 Uber NYC Data Analysis
 
+> Exploratory Data Analysis of 4.45M+ Uber trip records from New York City using Python.
 
+---
 
-\## Project Overview
+## 📌 Project Overview
 
+This project analyzes Uber trip activity in New York City using Python and Exploratory Data Analysis (EDA).
 
+The goal is to identify patterns in Uber demand across **time, days, Uber bases, and geographic pickup locations** and translate these patterns into practical business insights.
 
-This project analyzes Uber trip activity in New York City using Python and exploratory data analysis.
+---
 
+## 🎯 Business Objective
 
+The analysis aims to answer questions such as:
 
-The objective is to identify demand patterns across time, day of week, Uber base, and geographic pickup locations.
+- How does Uber trip activity change month-to-month?
+- Which hours have the highest recorded trip activity?
+- Which days of the week are busiest?
+- How does demand vary across different day-hour combinations?
+- How is trip activity distributed across Uber bases?
+- Where are pickup locations concentrated geographically?
 
+---
 
+## 📊 Dataset
 
-\## Business Objective
+The project uses Uber NYC trip data covering **April to September 2014**.
 
+### Dataset Features
 
+| Column | Description |
+|---|---|
+| `Date/Time` | Date and time of the trip |
+| `Lat` | Pickup latitude |
+| `Lon` | Pickup longitude |
+| `Base` | Uber base code |
 
-The analysis focuses on understanding:
+> The raw dataset is not included in this repository because of its large size.
 
+---
 
+## 🧹 Data Cleaning & Preparation
 
-\- Monthly trip trends
+The following data preparation steps were performed:
 
-\- Hourly demand patterns
+- Checked dataset structure and data types
+- Checked for missing values
+- Converted `Date/Time` into datetime format
+- Identified and removed duplicate records
+- Created time-based features
+- Extracted month, day, hour, and day of week
 
-\- Day-of-week activity
+### Data Quality Result
 
-\- Day and hour demand patterns
+**82,581 duplicate records** were removed.
 
-\- Uber base distribution
+After cleaning:
 
-\- Geographic pickup patterns
+**4,451,746 trip records** remained for analysis.
 
-\- Pickup density across NYC
+---
 
+## 🔎 Analysis Performed
 
-
-\## Dataset
-
-
-
-The analysis uses Uber NYC trip data from April to September 2014.
-
-
-
-The dataset contains:
-
-
-
-\- Date/Time
-
-\- Latitude
-
-\- Longitude
-
-\- Uber Base
-
-
-
-The raw dataset is not included in this repository because of its large size.
-
-
-
-\## Data Cleaning
-
-
-
-The following preprocessing steps were performed:
-
-
-
-\- Checked for missing values
-
-\- Converted Date/Time into datetime format
-
-\- Identified and removed duplicate records
-
-\- Created time-based features such as month, day, hour, and day of week
-
-
-
-After removing 82,581 duplicate records, the final dataset contained approximately 4.45 million trip records.
-
-
-
-\## Tools Used
-
-
-
-\- Python
-
-\- Pandas
-
-\- NumPy
-
-\- Matplotlib
-
-\- Seaborn
-
-\- Jupyter Notebook
-
-
-
-\## Analysis Performed
-
-
-
-\### 1. Monthly Trip Analysis
-
-
+### 📈 1. Monthly Trip Analysis
 
 Analyzed how recorded Uber trip activity changed from April to September 2014.
 
+### 🕐 2. Hourly Trip Analysis
 
+Analyzed trip activity across the 24 hours of the day.
 
-\### 2. Hourly Trip Analysis
+### 📅 3. Day-of-Week Analysis
 
+Compared recorded trip activity across Monday to Sunday.
 
+### 🔥 4. Day × Hour Heatmap
 
-Identified the hours with the highest recorded trip activity.
+Used a heatmap to identify patterns across different days and hours.
 
+### 🚗 5. Uber Base Analysis
 
+Compared recorded trip activity across the five Uber bases.
 
-\### 3. Day-of-Week Analysis
+### 📍 6. Geographic Pickup Analysis
 
+Visualized the geographic distribution of Uber pickup locations.
 
+### 🗺️ 7. Pickup Density Analysis
 
-Compared Uber trip activity across the seven days of the week.
+Analyzed areas with higher concentrations of recorded pickup activity.
 
+---
 
+## 📊 Key Findings
 
-\### 4. Day × Hour Analysis
+| KPI | Result |
+|---|---|
+| Total Trips | **4,451,746** |
+| Uber Bases | **5** |
+| Highest Monthly Volume | **September** |
+| September Trips | **1,004,099** |
+| Peak Recorded Hour | **5 PM** |
+| Trips at Peak Hour | **330,024** |
+| Busiest Day | **Thursday** |
+| Thursday Trips | **741,372** |
 
+### Main Observations
 
+- Recorded trip volume increased from April to September.
+- September recorded the highest monthly trip volume.
+- 5 PM recorded the highest hourly trip activity.
+- Thursday recorded the highest daily trip volume.
+- Pickup activity was concentrated in specific geographic areas.
+- Trip activity varied considerably across Uber bases.
 
-Used a heatmap to understand how trip activity varies across both day and hour.
+---
 
+## 💼 Business Recommendations
 
+Based on the analysis:
 
-\### 5. Uber Base Analysis
+- Use historical hourly demand patterns to support driver availability planning.
+- Consider daily and monthly demand patterns when planning operational resources.
+- Use geographic demand concentration to support local driver allocation.
+- Monitor differences in recorded activity across Uber bases.
 
+---
 
+## 🛠️ Tools & Technologies
 
-Compared trip activity across different Uber bases.
+- **Python**
+- **Pandas**
+- **NumPy**
+- **Matplotlib**
+- **Seaborn**
+- **Jupyter Notebook**
+- **Git & GitHub**
 
+---
 
-
-\### 6. Geographic Analysis
-
-
-
-Visualized pickup locations and identified areas with higher concentrations of recorded trips.
-
-
-
-\## Key Findings
-
-
-
-\- 4.45 million trip records were analyzed after duplicate removal.
-
-\- September recorded the highest monthly trip volume.
-
-\- 5 PM recorded the highest hourly trip volume.
-
-\- Thursday recorded the highest daily trip volume.
-
-\- Pickup activity was concentrated in specific geographic areas.
-
-\- Trip activity varied across Uber bases.
-
-
-
-\## Business Recommendations
-
-
-
-\- Use historical demand patterns to support driver availability planning.
-
-\- Consider hourly and daily demand patterns when planning operational resources.
-
-\- Use geographic demand concentration to support local driver allocation.
-
-\- Monitor differences in activity across Uber bases.
-
-
-
-\## Project Structure
-
-
+## 📁 Project Structure
 
 ```text
-
 Uber-NYC-Data-Analysis/
-
 │
-
-├── Uber\_NYC\_Data\_Analysis.ipynb
-
+├── Uber_NYC_Data_Analysis.ipynb
 ├── README.md
-
 ├── requirements.txt
-
 ├── .gitignore
-
 │
-
 └── visuals/
-
-&#x20;   ├── monthly\_trips.png
-
-&#x20;   ├── hourly\_trips.png
-
-&#x20;   ├── day\_of\_week\_trips.png
-
-&#x20;   ├── day\_hour\_heatmap.png
-
-&#x20;   ├── base\_analysis.png
-
-&#x20;   ├── pickup\_locations.png
-
-&#x20;   └── pickup\_density.png
-
+    ├── monthly_trips.png
+    ├── hourly_trips.png
+    ├── day_of_week_trips.png
+    ├── day_hour_heatmap.png
+    ├── base_analysis.png
+    ├── pickup_locations.png
+    └── pickup_density.png
